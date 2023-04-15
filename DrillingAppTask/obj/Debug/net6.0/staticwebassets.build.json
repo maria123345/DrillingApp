@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "8pq3DTRMc6jO08UF2PglF+ksumR+l7zS/nEuAd0D7hc=",
+  "Source": "DrillingAppTask",
+  "BasePath": "_content/DrillingAppTask",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

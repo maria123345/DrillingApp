@@ -1,3 +1,7 @@
+using DrillingAppTask.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<DrillingDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DrillingDBContext")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
