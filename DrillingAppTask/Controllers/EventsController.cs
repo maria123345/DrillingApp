@@ -9,14 +9,9 @@ namespace DrillingAppTask.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class EventsController : Controller
+    public class EventsController : ControllerBase
     {
         private readonly DrillingDBContext _context;
-
-        public IActionResult Index()
-        {
-            return View();
-        }
 
 
         public EventsController(DrillingDBContext context)
