@@ -1,0 +1,27 @@
+<div class="container my-5 ">
+    <h1 class="mb-3" >Add New Event</h1>
+    <div class="row" >
+    <div class="col-6" >
+        <form #form="ngForm" (ngSubmit)="addEvent()">
+            <div class="mb-3">
+              <label for="eventTitle" class="form-label">Event Title</label>
+              <input type="text" class="form-control" id="eventTitle" aria-describedby="emailHelp" name="eventTitle" [(ngModel)]="addEventRequest.eventTitle" >
+            </div>
+            <div class="mb-3">
+                <label for="eventTitle" class="form-label">Start</label>
+                <input type="number" class="form-control" id="startdate" aria-describedby="emailHelp" name="start" [(ngModel)]="addEventRequest.start">
+              </div>
+              <div class="mb-3">
+                <label for="eventTitle" class="form-label">End</label>
+                <input type="number" class="form-control" id="enddate" aria-describedby="emailHelp" name="end" [(ngModel)]="addEventRequest.end" >
+              </div>
+              <div class="mb-3">
+                <label for="backgroundColor" class="form-label">Background Color</label>
+                <input type="text" class="form-control" id="backgroundColor" aria-describedby="emailHelp" name="backgroundColor" [(ngModel)]="addEventRequest.backgroundColor">
+              </div>
+            
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+    </div></div>
+   
+</div>

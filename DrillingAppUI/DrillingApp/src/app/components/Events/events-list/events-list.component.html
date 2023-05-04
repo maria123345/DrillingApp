@@ -1,0 +1,31 @@
+<!-- <p>events-list works!</p> -->
+<div class="container my-5">
+    <h1>Events</h1>
+    <table class="table" *ngIf="events && events.length>0">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>eventTitle</th>
+            <th>start</th>
+            <th>end</th>
+            <th>background Color</th>
+            <th> </th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let event of events">
+                <td>{{ event.id }}</td>
+                <td>{{ event.eventTitle }}</td>
+                <td>{{ event.start }}</td>
+                <td>{{ event.end }}</td>
+                <td>{{ event.backgroundColor }}</td>
+                <td  ><a [routerLink]="['Events', 'Event',+ event.id   ]" >View</a></td>
+                <!-- <td  ><a [routerLink]="['Events', 'Delete'  ]" >Delete</a></td> -->
+                
+                <!-- <td  ><a [routerLink]="['Events', 'Update',+ event.id   ]" >Edit</a></td> -->
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!events || events.length<=0" >Sorry! No Events Found</p>
+
+</div>

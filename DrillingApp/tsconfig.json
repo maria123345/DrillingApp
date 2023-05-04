@@ -24,6 +24,8 @@
       "dom"
     ]
   },
+  "strictPropertyInitialization": false,
+
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

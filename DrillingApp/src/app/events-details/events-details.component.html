@@ -1,0 +1,34 @@
+<div class="container">
+    <app-events-form></app-events-form>
+    </div>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+         <tr>
+          <th>EventTitle</th>
+          <th>Start</th>
+          <th>End</th>
+        
+          <th>Actions</th>
+         </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of empService.listEvents"> 
+            <td>{{emp.EventTitle}}</td>
+            <td>{{emp.Start}}</td>
+            <td>{{emp.End}}</td>
+           
+            <td>
+              <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Actions
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#" (click)="populateEvents(emp)">Edit</a>
+                    <a class="dropdown-item" href="#" (click)="delete(emp.id)">Delete</a>
+                    
+                  </div>
+                </div>
+            </td>
+          </tr>
+        </tbody>
+    </table>

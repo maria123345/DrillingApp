@@ -1,0 +1,33 @@
+<div class="container my-5 ">
+    <h1 class="mb-3" >Edit Event</h1>
+    <div class="row" >
+    <div class="col-6" >
+        <form #form="ngForm" (ngSubmit)="updateEvent()">
+            <div class="mb-3">
+                <label for="id" class="form-label">ID</label>
+                <input type="number" class="form-control" id="ID" readonly aria-describedby="id" name="eventTitle" [(ngModel)]="eventDetails.id" >
+              </div>
+            <div class="mb-3">
+              <label for="eventTitle" class="form-label">Event Title</label>
+              <input type="text" class="form-control" id="eventTitle" aria-describedby="emailHelp" name="eventTitle" [(ngModel)]="eventDetails.eventTitle" >
+            </div>
+            <div class="mb-3">
+                <label for="eventTitle" class="form-label">Start</label>
+                <input type="number" class="form-control" id="startdate" aria-describedby="emailHelp" name="start" [(ngModel)]="eventDetails.start">
+              </div>
+              <div class="mb-3">
+                <label for="eventTitle" class="form-label">End</label>
+                <input type="number" class="form-control" id="enddate" aria-describedby="emailHelp" name="end" [(ngModel)]="eventDetails.end" >
+              </div>
+              <div class="mb-3">
+                <label for="backgroundColor" class="form-label">Background Color</label>
+                <input type="text" class="form-control" id="backgroundColor" aria-describedby="emailHelp" name="backgroundColor" [(ngModel)]="eventDetails.backgroundColor">
+              </div>
+            
+            <button type="submit" class="btn btn-primary mr-5">Save</button>
+            <button type="button" class="btn btn-danger" (click)="deleteEvent(eventDetails.id)">Delete</button>
+            <!-- <button type="button" class="btn btn-danger" routerLink="Events/Delete" (click)="deleteEvent(eventDetails.id)">Delete</button> -->
+          </form>
+    </div></div>
+   
+</div>

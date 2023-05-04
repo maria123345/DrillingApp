@@ -21,14 +21,15 @@ namespace DrillingAppTask.Controllers
 
         // GET:  
         [HttpGet("All")]
-        public async Task<ActionResult<IEnumerable<EventRequestDTO>>> GetItems()
+        public async Task<ActionResult<IEnumerable<Events>>> GetItems()
         {
-            return await _context.Events.Select(x => new EventRequestDTO
+            return await _context.Events.Select(x => new Events
             {
                 ID = x.ID,
                 End = x.End,
                 Start = x.Start,
                 EventTitle = x.EventTitle,
+                BackgroundColor = x.BackgroundColor,
 
 
             }).ToListAsync();
@@ -79,14 +80,15 @@ namespace DrillingAppTask.Controllers
 
         // POST:  
         [HttpPost("Post")]
-        public async Task<bool> PostItem(EventRequestDTO request)
+        public async Task<bool> PostItem(Events request)
         {
             var entity = new Events
             {
-                ID = request.ID,
+                //ID = request.ID,
                 EventTitle = request.EventTitle,
                 End = request.End,
                 Start = request.Start,
+                BackgroundColor = request.BackgroundColor
             };
             _context.Events.Add(entity);
             try
@@ -105,17 +107,18 @@ namespace DrillingAppTask.Controllers
 
 
         // PUT:  
-        [HttpPost("Update")]
-        public async Task<bool> PutItem(EventRequestDTO request)
+        [HttpPut("Update")]
+        public async Task<bool> PutItem(Events request)
         {
             var entity = _context.Events.FirstOrDefault(x => x.ID == request.ID);
 
             if (entity != null)
             {
+                entity.ID = request.ID;
                 entity.EventTitle = request.EventTitle;
                 entity.End = request.End;
                 entity.Start = request.Start;
-
+                entity.BackgroundColor = request.BackgroundColor;
                 _context.Events.Update(entity);
                 try
                 {
@@ -134,6 +137,8 @@ namespace DrillingAppTask.Controllers
                 return false;
             }
         }
+
+        
 
     }
 }
